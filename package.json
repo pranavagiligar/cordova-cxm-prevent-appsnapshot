@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-app-switcher-privacy-cxm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cordova plugin to handle app switcher visibility",
   "cordova": {
     "id": "cordova-plugin-app-switcher-privacy-cxm",

@@ -6,15 +6,21 @@
 }
 @end
 
-@interface AppDelegate (AppSwitcherPrivacy) {}
+@implementation AppSwitcherPrivacy
 
-@end
+- (void)pluginInitialize {
 
-@implementation AppDelegate (AppSwitcherPrivacy)
-BOOL shouldBlock = NO;
-BOOL featureEnabled = NO;
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(appDidBecomeActive)
+                                                name:UIApplicationDidBecomeActiveNotification
+                                              object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(applicationWillResignActive)
+                                                name:UIApplicationWillResignActiveNotification
+                                              object:nil];
+}
 
-- (void)applicationWillResignActive:(UIApplication *)application {
+- (void)applicationWillResignActive {
     if (shouldBlock) {
         self.window.backgroundColor = [UIColor clearColor];
 
@@ -36,7 +42,7 @@ BOOL featureEnabled = NO;
     }
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+- (void)appDidBecomeActive {
     if (featureEnabled) {
         NSLog(@"Hiding blur");
         // grab a reference to our custom blur view

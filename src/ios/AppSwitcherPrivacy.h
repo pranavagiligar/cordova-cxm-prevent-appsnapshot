@@ -1,8 +1,11 @@
 #import <Cordova/CDV.h>
 
-@interface ScreenPrivacy : CDVPlugin
+@interface AppSwitcherPrivacy : CDVPlugin {
+    BOOL shouldBlock;
+    BOOL featureEnabled;
+}
 
-- (void)unblock:(CDVInvokedUrlCommand*)command;
-- (void)block:(CDVInvokedUrlCommand*)command;
+- (void) unblock:(CDVInvokedUrlCommand*)command;
+- (void) block:(CDVInvokedUrlCommand*)command;
 
 @end
