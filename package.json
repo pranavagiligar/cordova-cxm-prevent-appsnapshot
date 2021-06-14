@@ -1,0 +1,32 @@
+{
+  "name": "cordova-plugin-app-switcher-privacy-cxm",
+  "version": "0.0.1",
+  "description": "Cordova plugin to handle app switcher visibility",
+  "cordova": {
+    "id": "cordova-plugin-app-switcher-privacy-cxm",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranavagiligar/cordova-plugin-app-switcher-privacy-cxm.git"
+  },
+  "author": "grpranava",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pranavagiligar/cordova-plugin-app-switcher-privacy-cxm/issues"
+  },
+  "scripts": {
+    "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml",
+    "postversion": "git push && git push --tags"
+  },
+  "homepage": "https://github.com/pranavagiligar/cordova-plugin-app-switcher-privacy-cxm#readme",
+  "keywords": [
+    "cordova",
+    "app-switcher",
+    "cordova-android",
+    "cordova-ios"
+  ]
+}
