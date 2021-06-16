@@ -1,10 +1,7 @@
 #import <Cordova/CDV.h>
 #import <Cordova/CDVPlugin.h>
 
-@interface AppSwitcherPrivacy : CDVPlugin {
-    BOOL shouldBlock;
-    BOOL featureEnabled;
-}
+@interface AppSwitcherPrivacy : CDVPlugin
 
 - (void)unblock:(CDVInvokedUrlCommand*)command;
 - (void)block:(CDVInvokedUrlCommand*)command;

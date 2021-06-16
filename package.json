@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-app-switcher-privacy-cxm",
-  "version": "0.0.4",
+  "name": "cordova-cxm-prevent-appsnapshot",
+  "version": "0.0.8",
   "description": "Cordova plugin to handle app switcher visibility",
   "cordova": {
-    "id": "cordova-plugin-app-switcher-privacy-cxm",
+    "id": "cordova-cxm-prevent-appsnapshot",
     "platforms": [
       "ios",
       "android"
@@ -11,18 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pranavagiligar/cordova-plugin-app-switcher-privacy-cxm.git"
+    "url": "git+https://github.com/pranavagiligar/cordova-cxm-prevent-appsnapshot.git"
   },
   "author": "grpranava",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pranavagiligar/cordova-plugin-app-switcher-privacy-cxm/issues"
+    "url": "https://github.com/pranavagiligar/cordova-cxm-prevent-appsnapshot/issues"
   },
   "scripts": {
     "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml",
     "postversion": "git push && git push --tags"
   },
-  "homepage": "https://github.com/pranavagiligar/cordova-plugin-app-switcher-privacy-cxm#readme",
+  "homepage": "https://github.com/pranavagiligar/cordova-cxm-prevent-appsnapshot#readme",
   "keywords": [
     "cordova",
     "app-switcher",

@@ -1,14 +1,14 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-app-switcher-privacy-cxm"
-        version="0.0.4">
+        id="cordova-cxm-prevent-appsnapshot"
+        version="0.0.8">
 
-    <name>cordova-plugin-app-switcher-privacy-cxm</name>
+    <name>cordova-cxm-prevent-appsnapshot</name>
     <description>Cordova plugin to handle app switcher visibility</description>
     <license>MIT</license>
     <keywords>cordova</keywords>
-    <repo>https://github.com/pranavagiligar/cordova-plugin-app-switcher-privacy-cxm</repo>
-    <issue>https://github.com/pranavagiligar/cordova-plugin-app-switcher-privacy-cxm/issues</issue>
+    <repo>https://github.com/pranavagiligar/cordova-cxm-prevent-appsnapshot</repo>
+    <issue>https://github.com/pranavagiligar/cordova-cxm-prevent-appsnapshot/issues</issue>
 
     <js-module src="www/plugin.js" name="plugin">
         <clobbers target="window.plugins.appswitcher"/>
@@ -35,7 +35,7 @@
         <config-file target="config.xml" parent="/*">
             <feature name="appswitcher">
                 <param name="ios-package" value="AppSwitcherPrivacy"/>
-                <param name="onload" value="true"/>
+                <param name="onload" value="false"/>
             </feature>
         </config-file>
 

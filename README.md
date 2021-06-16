@@ -1,11 +1,11 @@
-# cordova-plugin-screenprivacy-cxm
+# cordova-cxm-prevent-appsnapshot
 
 ## Installation
-`cordova plugin add cordova-plugin-app-switcher-privacy-cxm`
+`cordova plugin add cordova-cxm-prevent-appsnapshot`
 
 #### For local setup
   1. clone the repository to cordova directory 
-  2. cordova plugin add ./cordova-plugin-app-switcher-privacy-cxm
+  2. cordova plugin add ./cordova-cxm-prevent-appsnapshot
 
 ## Note: in android there is no callback from system when app pushed to recently opened apps. The feature implemented is using lifecycle method of android activity (onPause and onResume) to create a work around system which is might not work in some devices [refer this for more details](https://stackoverflow.com/questions/43274289/android-customizing-recent-apps-thumbnail-screenshot-by-default#answer-49340273)
 

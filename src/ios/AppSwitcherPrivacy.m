@@ -1,23 +1,34 @@
 #import "AppSwitcherPrivacy.h"
-@interface AppSwitcherPrivacy() {
-    CDVInvokedUrlCommand * _eventCommand;
-}
-@end
+#import "AppDelegate.h"
 
 @implementation AppSwitcherPrivacy
+
+BOOL shouldBlock;
+BOOL featureEnabled;
+
 - (void)pluginInitialize
 {
     featureEnabled = NO;
     shouldBlock = NO;
-    [[NSNotificationCenter defaultCenter]addObserver:self
-                                            selector:@selector(appDidBecomeActive:)
-                                                name:UIApplicationDidBecomeActiveNotification
-                                              object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self
-                                            selector:@selector(applicationWillResignActive:)
-                                                name:UIApplicationWillResignActiveNotification
-                                              object:nil];
 }
+
+- (void)unblock:(CDVInvokedUrlCommand *)command
+{
+    shouldBlock = NO;
+}
+
+- (void)block:(CDVInvokedUrlCommand *)command
+{
+    shouldBlock = YES;
+}
+
+@end
+
+@interface AppDelegate (AppSwitcherPrivacy) {}
+
+@end
+
+@implementation AppDelegate (AppSwitcherPrivacy)
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -42,7 +53,7 @@
     }
 }
 
-- (void)appDidBecomeActive:(UIApplication *)application 
+- (void)applicationDidBecomeActive:(UIApplication *)application 
 {
     if (featureEnabled) {
         NSLog(@"Hiding blur");
@@ -58,16 +69,6 @@
         }];
         featureEnabled = NO;
     }
-}
-
-- (void)unblock:(CDVInvokedUrlCommand *)command
-{
-    shouldBlock = NO;
-}
-
-- (void)block:(CDVInvokedUrlCommand *)command
-{
-    shouldBlock = YES;
 }
 
 @end
