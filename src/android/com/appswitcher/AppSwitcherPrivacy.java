@@ -6,7 +6,6 @@ import android.widget.Toast;
 
 import android.graphics.Color;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import android.graphics.Bitmap;
@@ -31,14 +30,14 @@ public class AppSwitcherPrivacy extends CordovaPlugin {
     private AppSwitcherPrivacy pluginContext;
 
     LinearLayout layout;
-    FrameLayout frameLayout;
+    ViewGroup parentView;
     boolean featureEnabled = false;
     boolean shouldBlock = false;
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        frameLayout = (FrameLayout) webView.getView().getParent();
+        parentView = (ViewGroup) webView.getView().getParent();
         layout = new LinearLayout(this.cordova.getActivity().getApplicationContext());
         layout.setLayoutParams(
             new LinearLayout.LayoutParams(
@@ -69,7 +68,7 @@ public class AppSwitcherPrivacy extends CordovaPlugin {
     @Override
     public void onPause(boolean multitasking) {
         if (shouldBlock) {
-            frameLayout.addView(layout);
+            parentView.addView(layout);
             featureEnabled = true;
         }
     }
@@ -77,7 +76,7 @@ public class AppSwitcherPrivacy extends CordovaPlugin {
     @Override
     public void onResume(boolean multitasking) {
         if (featureEnabled) {
-            frameLayout.removeView(layout);
+            parentView.removeView(layout);
             featureEnabled = false;
         }
     }
